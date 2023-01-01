@@ -10,7 +10,7 @@ const about = {
   role: 'FullStack Developer',
   description:
     'Start small with side projects. It doesn’t matter how large or small they are at first, the feeling of solving a difficult problem with software is what matters.',
-  resume: 'https://example.com',
+  resume: 'https://drive.google.com/file/d/1Ad5zuSLTW-9py3gJ1OtPlF0-uNlL33pV/view?usp=share_link',
   social: {
     linkedin: 'https://www.linkedin.com/in/r-gethushan/',
     github: 'https://github.com/gethushan',
