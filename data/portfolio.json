@@ -1,0 +1,220 @@
+{
+  "site": {
+    "url": "https://gethushan.xyz",
+    "name": "Gethushan Ravichandran",
+    "shortName": "Gethushan",
+    "title": "Gethushan Ravichandran - Software Engineer",
+    "description": "Crafting digital experiences and building products that matter. Software engineer focused on creating 1-2 experiences with thoughtful design.",
+    "locale": "en_US",
+    "icon": "https://avatars.githubusercontent.com/u/85168600?v=4",
+    "ogImage": {
+      "url": "https://avatars.githubusercontent.com/u/85168600?v=4",
+      "width": 1200,
+      "height": 630,
+      "alt": "Gethushan Ravichandran - Software Engineer",
+      "type": "image/png"
+    },
+    "twitterCreator": "@gethushan",
+    "generator": "v0.app"
+  },
+  "navigation": {
+    "defaultCurrentSection": "featured",
+    "sectionsForScrollDetection": [
+      "featured",
+      "work",
+      "education",
+      "across-the-web"
+    ],
+    "items": [
+      { "name": "Featured", "href": "#featured", "id": "featured" },
+      { "name": "Experiments", "href": "#work", "id": "work" },
+      { "name": "Elsewhere", "href": "#across-the-web", "id": "across-the-web" }
+    ]
+  },
+  "hero": {
+    "name": "Gethushan Ravichandran",
+    "intro": "I’m a software engineer with 1–2 years of experience designing and building digital products.",
+    "rolesPrefix": "Currently at",
+    "roles": [
+      {
+        "company": "DROPS",
+        "url": "https://kifgo-drop-xi.vercel.app",
+        "title": "Software Engineer"
+      },
+      {
+        "company": "Kifgo",
+        "url": "https://kifgo.lk",
+        "title": "Junior Software Developer"
+      }
+    ]
+  },
+  "about": {
+    "headerLabel": "background",
+    "paragraphs": [
+      "I’m a software engineer who enjoys building things that people actually love using. I like working across design and development—turning ideas into real, working products.",
+      "Lately, I’ve been focused on creating brands, systems, and product experiences that feel simple, intuitive, and a bit delightful. I care about the small details, because they’re usually what make the biggest difference.",
+      "When I’m not coding or designing, you’ll probably find me playing basketball, exploring new music, or messing around with fun side projects."
+    ],
+    "currentRoles": [
+      {
+        "company": "DROPS",
+        "url": "https://kifgo-drop-xi.vercel.app",
+        "title": "Software Engineer"
+      },
+      {
+        "company": "Kifgo",
+        "url": "https://kifgo.lk",
+        "title": "Junior Software Developer"
+      }
+    ]
+  },
+  "featured": {
+    "headerLabel": "featured projects",
+    "items": [
+      {
+        "id": "DROPS",
+        "title": "DROPS",
+        "funding": null,
+        "image": "/images/drops.png",
+        "alt": "DROPS - Revenue intelligence platform",
+        "description": "DROPS is a photography contest platform designed to ensure authenticity and fairness. It enables users to conduct contests, upload images with verified meta data, and utilize various voting systems, including community, expert, and combined weights, to determine winners effectively.",
+        "sections": [
+          {
+            "title": "The Challenge",
+            "content": "Creating a trustworthy and engaging platform for conducting photography contests, where authenticity of images and fairness in voting are top priorities."
+          },
+          {
+            "title": "What We Built",
+            "content": "A platform where anyone can conduct a photography contest. Users can upload their images, which our system analyzes to capture meta tags for authenticity and to identify AI-generated images. The platform supports three voting methods: community voting, expert judging, and combined voting systems."
+          },
+          {
+            "title": "The Approach",
+            "content": "We implemented a system to normalize voting scores and assign weighted privileges for combined votes. This ensures fair and balanced results, giving the platform the authority to determine winners consistently and transparently. Community engagement and authenticity are at the heart of our approach."
+          }
+        ],
+        "role": "Fullstack Software Engineer",
+        "links": [
+          { "text": "Website", "url": "https://kifgo-drop-xi.vercel.app" }
+        ]
+      },
+      {
+        "id": "Kifgo",
+        "title": "Kifgo",
+        "funding": null,
+        "image": "/images/kifgo.png",
+        "alt": "Kifgo - Multi-vendor e-commerce platform",
+        "description": "Kifgo is a multi-vendor e-commerce platform that simplifies online shopping by connecting vendors and customers in one seamless interface. Vendors can list their products while customers browse, purchase, and track orders effortlessly. The platform ensures a streamlined experience for managing products, transactions, and user engagement.",
+        "sections": [
+          {
+            "title": "The Challenge",
+            "content": "Building a dynamic online marketplace that supports multiple vendors, with seamless onboarding, product management, and sales transactions, while ensuring trust and security among buyers and sellers."
+          },
+          {
+            "title": "What We Built",
+            "content": "A robust multi-vendor e-commerce platform where vendors can easily register, showcase their products, and manage orders. Key features include real-time inventory tracking, secure payment gateways, and a rating/review system to foster trust among users."
+          },
+          {
+            "title": "The Approach",
+            "content": "We focused on scalability and user experience, implementing modular architecture to support future growth. The platform includes AI-driven product recommendations, a user-friendly interface, and advanced analytics to provide insights for both vendors and buyers. Security measures like secure authentication, fraud detection, and encrypted data transmission were prioritized to ensure user trust."
+          }
+        ],
+        "role": "Fullstack Software Engineer",
+        "links": [{ "text": "Website", "url": "https://kifgo.lk" }]
+      }
+    ]
+  },
+  "work": {
+    "headerLabel": "experiments",
+    "items": [
+      {
+        "id": 8,
+        "title": "e-channeling platform",
+        "description": "A Centralized healthcare appointment booking system",
+        "link": "https://e-channeling-revamp.vercel.app/",
+        "tag": "website"
+      },
+      {
+        "id": 11,
+        "title": "Dgital Queue Management System",
+        "description": "A digital queue management system for efficient service delivery",
+        "link": "https://digital-queue-management-platform.vercel.app/",
+        "tag": "website"
+      },
+      {
+        "id": 10,
+        "title": "Intern Management System",
+        "description": "A comprehensive platform for managing intern applications",
+        "link": "https://ternboard.slt.lk/",
+        "tag": "website"
+      }
+    ]
+  },
+  "education": {
+    "headerLabel": "education",
+    "items": [
+      {
+        "degree": "B.Sc. in Computer Science",
+        "institution": "Trincomalee Campus, Eastern University, Sri Lanka",
+        "period": "2022 - 2026",
+        "description": "Focused on software engineering, algorithms, and human-computer interaction, with hands-on projects in web development and Deep Learning Research work."
+      }
+    ]
+  },
+  "contact": {
+    "headerLabel": "elsewhere",
+    "links": [
+      {
+        "label": "Email",
+        "value": "gethushan@gmail.com",
+        "href": "mailto:gethushan@gmail.com",
+        "copyable": true
+      },
+      {
+        "label": "X",
+        "value": "@gethushan",
+        "href": "https://x.com/gethushan"
+      },
+      {
+        "label": "GitHub",
+        "value": "gethushan",
+        "href": "https://github.com/gethushan"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "gethushan",
+        "href": "https://linkedin.com/in/gethushan"
+      }
+    ]
+  },
+  "footer": {
+    "textPrefix": "Built with love and code by",
+    "name": "Gethushan",
+    "profileUrl": "https://x.com/gethushan"
+  },
+  "seo": {
+    "jsonLd": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gethushan Ravichandran",
+      "url": "https://gethushan.xyz",
+      "image": "https://gethushan.xyz/api/og-image",
+      "jobTitle": "Designer & Developer",
+      "description": "Portfolio of Gethushan Ravichandran, a designer and developer creating digital experiences.",
+      "sameAs": [
+        "https://linkedin.com/in/r-gethushan",
+        "https://github.com/gethushan",
+        "https://x.com/gethushan"
+      ]
+    },
+    "sitemap": [
+      { "path": "", "changeFrequency": "monthly", "priority": 1 },
+      { "path": "/#work", "changeFrequency": "weekly", "priority": 0.8 },
+      { "path": "/#about", "changeFrequency": "monthly", "priority": 0.7 },
+      {
+        "path": "/#across-the-web",
+        "changeFrequency": "monthly",
+        "priority": 0.5
+      }
+    ]
+  }
+}
