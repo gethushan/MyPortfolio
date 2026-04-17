@@ -1,114 +1,128 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 
+//its a comment
 export function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [clicked, setClicked] = useState(false)
-  const [linkHovered, setLinkHovered] = useState(false)
-  const [hidden, setHidden] = useState(false)
-  const [overIframe, setOverIframe] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-  const [isHydrated, setIsHydrated] = useState(false)
-  const rafRef = useRef<number | null>(null)
-  const observerRef = useRef<MutationObserver | null>(null)
-  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [clicked, setClicked] = useState(false);
+  const [linkHovered, setLinkHovered] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [overIframe, setOverIframe] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+  const rafRef = useRef<number | null>(null);
+  const observerRef = useRef<MutationObserver | null>(null);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    setIsHydrated(true)
+    setIsHydrated(true);
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    checkIfMobile()
-    window.addEventListener("resize", checkIfMobile)
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
 
     return () => {
-      window.removeEventListener("resize", checkIfMobile)
-    }
-  }, [])
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
 
   useEffect(() => {
-    if (isMobile || !isHydrated) return
+    if (isMobile || !isHydrated) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       rafRef.current = requestAnimationFrame(() => {
-        setPosition({ x: e.clientX, y: e.clientY })
-      })
-    }
+        setPosition({ x: e.clientX, y: e.clientY });
+      });
+    };
 
-    const handleMouseDown = () => setClicked(true)
-    const handleMouseUp = () => setClicked(false)
-    const handleMouseEnter = () => setHidden(false)
-    const handleMouseLeave = () => setHidden(true)
+    const handleMouseDown = () => setClicked(true);
+    const handleMouseUp = () => setClicked(false);
+    const handleMouseEnter = () => setHidden(false);
+    const handleMouseLeave = () => setHidden(true);
 
-    document.addEventListener("mousemove", handleMouseMove, { passive: true })
-    document.addEventListener("mousedown", handleMouseDown)
-    document.addEventListener("mouseup", handleMouseUp)
-    document.addEventListener("mouseenter", handleMouseEnter)
-    document.addEventListener("mouseleave", handleMouseLeave)
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("mouseenter", handleMouseEnter);
+    document.addEventListener("mouseleave", handleMouseLeave);
 
     // Cache DOM queries - don't requery on every mutation
-    let cachedLinks: Set<Element> = new Set()
-    let cachedIframes: Set<Element> = new Set()
+    let cachedLinks: Set<Element> = new Set();
+    let cachedIframes: Set<Element> = new Set();
 
     const attachLinkListeners = (el: Element) => {
-      el.addEventListener("mouseenter", () => setLinkHovered(true), { passive: true })
-      el.addEventListener("mouseleave", () => setLinkHovered(false), { passive: true })
-    }
+      el.addEventListener("mouseenter", () => setLinkHovered(true), {
+        passive: true,
+      });
+      el.addEventListener("mouseleave", () => setLinkHovered(false), {
+        passive: true,
+      });
+    };
 
     const attachIframeListeners = (el: Element) => {
-      el.addEventListener("mouseenter", () => setOverIframe(true), { passive: true })
-      el.addEventListener("mouseleave", () => setOverIframe(false), { passive: true })
-    }
+      el.addEventListener("mouseenter", () => setOverIframe(true), {
+        passive: true,
+      });
+      el.addEventListener("mouseleave", () => setOverIframe(false), {
+        passive: true,
+      });
+    };
 
     const handleLinkHoverEvents = () => {
-      const newLinks = document.querySelectorAll("a, button, input, textarea, [role='button']")
+      const newLinks = document.querySelectorAll(
+        "a, button, input, textarea, [role='button']",
+      );
       newLinks.forEach((el) => {
         if (!cachedLinks.has(el)) {
-          attachLinkListeners(el)
-          cachedLinks.add(el)
+          attachLinkListeners(el);
+          cachedLinks.add(el);
         }
-      })
-    }
+      });
+    };
 
     const handleIframeHoverEvents = () => {
-      const newIframes = document.querySelectorAll(".spotify-popup, iframe")
+      const newIframes = document.querySelectorAll(".spotify-popup, iframe");
       newIframes.forEach((el) => {
         if (!cachedIframes.has(el)) {
-          attachIframeListeners(el)
-          cachedIframes.add(el)
+          attachIframeListeners(el);
+          cachedIframes.add(el);
         }
-      })
-    }
+      });
+    };
 
-    handleLinkHoverEvents()
-    handleIframeHoverEvents()
+    handleLinkHoverEvents();
+    handleIframeHoverEvents();
 
     observerRef.current = new MutationObserver(() => {
-      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current)
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
       debounceTimerRef.current = setTimeout(() => {
-        handleLinkHoverEvents()
-        handleIframeHoverEvents()
-      }, 500)
-    })
-    observerRef.current.observe(document.body, { childList: true, subtree: true })
+        handleLinkHoverEvents();
+        handleIframeHoverEvents();
+      }, 500);
+    });
+    observerRef.current.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
 
     return () => {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
-      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current)
-      document.removeEventListener("mousemove", handleMouseMove)
-      document.removeEventListener("mousedown", handleMouseDown)
-      document.removeEventListener("mouseup", handleMouseUp)
-      document.removeEventListener("mouseenter", handleMouseEnter)
-      document.removeEventListener("mouseleave", handleMouseLeave)
-      observerRef.current?.disconnect()
-    }
-  }, [isMobile, isHydrated])
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mouseenter", handleMouseEnter);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      observerRef.current?.disconnect();
+    };
+  }, [isMobile, isHydrated]);
 
-  if (!isHydrated || isMobile) return null
+  if (!isHydrated || isMobile) return null;
 
   return (
     <>
@@ -143,5 +157,5 @@ export function CustomCursor() {
         }}
       />
     </>
-  )
+  );
 }
