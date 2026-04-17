@@ -1,0 +1,458 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+ 
+:root {
+  /* Dark mode is default - enhanced near-black for comfortable viewing */
+  --background: oklch(0.08 0 0); /* Near-black, reduces eye strain */
+  --foreground: oklch(0.95 0 0); /* Bright white, reduces glare */
+  --card: oklch(0.12 0 0); /* Subtle lift from background */
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.95 0 0);
+  --primary-foreground: oklch(0.09 0 0);
+  --secondary: oklch(0.20 0 0); /* Better hierarchy */
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.20 0 0);
+  --muted-foreground: oklch(0.64 0 0);
+  --accent: oklch(0.20 0 0);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.20 0 0); /* Improved visibility */
+  --input: oklch(0.20 0 0);
+  --ring: oklch(0.44 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.95 0 0);
+  --sidebar-primary-foreground: oklch(0.09 0 0);
+  --sidebar-accent: oklch(0.20 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.20 0 0);
+  --sidebar-ring: oklch(0.44 0 0);
+}
+ 
+.dark {
+  --background: oklch(0.145 0 0); /* Preserved user color */
+  --foreground: oklch(0.985 0 0); /* Preserved user color */
+  --card: oklch(0.145 0 0); /* Preserved user color */
+  --card-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --popover: oklch(0.145 0 0); /* Preserved user color */
+  --popover-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --primary: oklch(0.985 0 0); /* Preserved user color */
+  --primary-foreground: oklch(0.205 0 0); /* Preserved user color */
+  --secondary: oklch(0.269 0 0); /* Preserved user color */
+  --secondary-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --muted: oklch(0.269 0 0); /* Preserved user color */
+  --muted-foreground: oklch(0.708 0 0); /* Preserved user color */
+  --accent: oklch(0.269 0 0); /* Preserved user color */
+  --accent-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --destructive: oklch(0.396 0.141 25.723); /* Preserved user color */
+  --destructive-foreground: oklch(0.637 0.237 25.331); /* Preserved user color */
+  --border: oklch(0.269 0 0); /* Preserved user color */
+  --input: oklch(0.269 0 0); /* Preserved user color */
+  --ring: oklch(0.439 0 0); /* Preserved user color */
+  --chart-1: oklch(0.488 0.243 264.376); /* Preserved user color */
+  --chart-2: oklch(0.696 0.17 162.48); /* Preserved user color */
+  --chart-3: oklch(0.769 0.188 70.08); /* Preserved user color */
+  --chart-4: oklch(0.627 0.265 303.9); /* Preserved user color */
+  --chart-5: oklch(0.645 0.246 16.439); /* Preserved user color */
+  --sidebar: oklch(0.205 0 0); /* Preserved user color */
+  --sidebar-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --sidebar-primary: oklch(0.488 0.243 264.376); /* Preserved user color */
+  --sidebar-primary-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --sidebar-accent: oklch(0.269 0 0); /* Preserved user color */
+  --sidebar-accent-foreground: oklch(0.985 0 0); /* Preserved user color */
+  --sidebar-border: oklch(0.269 0 0); /* Preserved user color */
+  --sidebar-ring: oklch(0.439 0 0); /* Preserved user color */
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+ 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@layer components {
+  /* Grid container - centers content with frame lines */
+  .grid-container {
+    @apply relative mx-auto w-full;
+    max-width: 900px;
+    padding: 0;
+  }
+
+  /* Responsive text sizing utilities */
+  .text-large {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  .text-mono {
+    font-family: monospace;
+  }
+}
+
+@layer base {
+  /* Premium animation and performance optimizations */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* GPU acceleration for interactive elements */
+  a,
+  button,
+  input,
+  textarea,
+  [role="button"] {
+    will-change: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Smooth transitions on interactive elements */
+  a,
+  button {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  /* iframe momentum scrolling for iOS */
+  iframe {
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Mobile-specific optimizations */
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Prevent layout shifts on mobile */
+    * {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    /* Optimize iframe scrolling on mobile */
+    iframe {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Reduce animation complexity on mobile */
+    [data-mobile-reduce-motion] {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Performance-critical animations */
+  @supports (will-change: transform) {
+    .will-change-transform {
+      will-change: transform;
+    }
+
+    .will-change-colors {
+      will-change: color, background-color, border-color;
+    }
+  }
+
+  /* Snappy, buttery smooth transitions */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Advanced performance optimizations */
+  main,
+  section,
+  article {
+    contain: layout style;
+  }
+
+  /* Optimize off-screen element rendering */
+  @supports (content-visibility: auto) {
+    section {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 500px;
+    }
+  }
+
+  /* Force GPU acceleration for motion elements */
+  [class*="motion"],
+  [class*="framer"] {
+    transform: translateZ(0);
+    will-change: auto;
+  }
+
+  /* Optimize button interactions */
+  button,
+  a {
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  /* Optimize scroll performance */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+  }
+
+  /* Reduce repaints on hover */
+  :hover {
+    will-change: auto;
+  }
+
+  /* Scroll Preview Effect - Subtle peek of next section */
+  .scroll-preview-container {
+    perspective: 1200px;
+  }
+
+  .scroll-section {
+    position: relative;
+    overflow: visible;
+    will-change: clip-path;
+  }
+
+  /* Smooth fade between sections with scroll preview */
+  .scroll-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.01) 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+    transition: height 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+  }
+
+  .scroll-section:hover::after {
+    height: 60px;
+  }
+
+  /* Mobile scroll preview settings */
+  @media (max-width: 640px) {
+    .scroll-section::after {
+      height: 0;
+    }
+
+    .scroll-section {
+      scroll-margin-top: 60px;
+    }
+
+    /* Subtle hint line for next section on mobile */
+    .scroll-section::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(82, 82, 82, 0.2) 50%,
+        transparent 100%
+      );
+      opacity: 0.3;
+      z-index: 5;
+    }
+  }
+
+  /* Desktop smooth scroll alignment */
+  @media (min-width: 641px) {
+    .scroll-section {
+      scroll-margin-top: 80px;
+    }
+
+    /* Gradient border preview effect */
+    .scroll-section:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(82, 82, 82, 0.15) 50%,
+        transparent 100%
+      );
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
+      z-index: 5;
+    }
+
+    .scroll-section:not(:last-child):hover::before {
+      opacity: 1;
+    }
+  }
+
+  /* Prevent jank during scroll preview reveal */
+  @supports (paint-order: normal) {
+    .scroll-section {
+      paint-order: stroke fill markers;
+    }
+  }
+
+  /* Smooth scroll snap with preview gap */
+  @supports (scroll-snap-type: y proximity) {
+    .scroll-preview-container {
+      scroll-behavior: smooth;
+    }
+
+    .scroll-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  }
+
+  /* Respect user motion preferences - critical for jank reduction */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Disable spring animations for reduced motion users */
+    [data-motion="spring"] {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Optimize for low-end devices - detect touch and reduce animations */
+  @media (hover: none) and (pointer: coarse) {
+    /* Reduce simultaneous animations on touch devices */
+    [class*="motion"],
+    [class*="animate"] {
+      animation-duration: 0.15s;
+    }
+
+    /* Disable hover effects on touch */
+    button,
+    a {
+      transition-duration: 0.1s;
+    }
+  }
+}
