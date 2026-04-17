@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Image Preview</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .container {
+      max-width: 800px;
+      padding: 20px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .card-header {
+      background-color: #1a1a1c;
+      color: white;
+      padding: 15px 20px;
+      font-weight: bold;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .preview {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .preview-image {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto;
+    }
+    .meta {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .platform {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Social Media Image Preview
+      </div>
+      <div class="card-body">
+        <p>This is how your image will appear when shared on social media platforms:</p>
+        
+        <h2>Current OG Image</h2>
+        <div class="preview">
+          <img src="/images/og-image.png" alt="OG Image" class="preview-image">
+          <div class="meta">1200 × 1200px PNG</div>
+        </div>
+        
+        <h2>Preview by Platform</h2>
+        
+        <div class="platform">Facebook / LinkedIn</div>
+        <div class="preview">
+          <div style="background-color: #f0f2f5; padding: 10px; border-radius: 4px;">
+            <div style="background-color: white; border-radius: 8px; padding: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">
+              <div style="font-weight: bold; margin-bottom: 5px;">Damilare Osofisan | Designer & Developer</div>
+              <div style="font-size: 14px; color: #65676b; margin-bottom: 10px;">damilareoo.xyz</div>
+              <img src="/images/og-image.png" alt="OG Image Preview" style="width: 100%; border-radius: 8px;">
+              <div style="font-size: 14px; color: #65676b; margin-top: 10px;">Portfolio of Damilare Osofisan, a designer and developer creating digital experiences.</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="platform">Twitter</div>
+        <div class="preview">
+          <div style="background-color: #15202b; color: white; padding: 10px; border-radius: 4px;">
+            <div style="background-color: #192734; border-radius: 8px; padding: 12px;">
+              <div style="font-weight: bold; margin-bottom: 5px;">Damilare Osofisan | Designer & Developer</div>
+              <img src="/images/og-image.png" alt="OG Image Preview" style="width: 100%; border-radius: 8px; margin: 10px 0;">
+              <div style="font-size: 14px; color: #8899a6; margin-bottom: 5px;">Portfolio of Damilare Osofisan, a designer and developer creating digital experiences.</div>
+              <div style="font-size: 14px; color: #8899a6;">damilareoo.xyz</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        Debugging Tools
+      </div>
+      <div class="card-body">
+        <p>Use these tools to test and debug your social media previews:</p>
+        <ul>
+          <li><a href="https://developers.facebook.com/tools/debug/" target="_blank">Facebook Sharing Debugger</a></li>
+          <li><a href="https://cards-dev.twitter.com/validator" target="_blank">Twitter Card Validator</a></li>
+          <li><a href="https://www.linkedin.com/post-inspector/" target="_blank">LinkedIn Post Inspector</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
