@@ -1,6 +1,6 @@
 {
   "site": {
-    "url": "https://gethushan.xyz",
+    "url": "https://my-portfolio-g79l.vercel.app",
     "name": "Gethushan Ravichandran",
     "shortName": "Gethushan",
     "title": "Gethushan Ravichandran - Software Engineer",
@@ -196,8 +196,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gethushan Ravichandran",
-      "url": "https://gethushan.xyz",
-      "image": "https://gethushan.xyz/api/og-image",
+      "url": "https://my-portfolio-g79l.vercel.app",
+      "image": "https://avatars.githubusercontent.com/u/85168600?v=4",
       "jobTitle": "Designer & Developer",
       "description": "Portfolio of Gethushan Ravichandran, a designer and developer creating digital experiences.",
       "sameAs": [
